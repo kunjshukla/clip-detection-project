@@ -2,23 +2,43 @@ Sure! Here's a **brief and clean `README.md`** you can use for your project:
 
 ---
 
-# 🧠 CLIP-Based Human & Animal Detection System
+# CLIP-Based Human & Animal Detection System
 
 This project leverages OpenAI’s CLIP model to **detect and classify humans and animals** from **images, videos, or datasets** with bounding box visualization. It supports real-time testing and accuracy evaluation on custom datasets.
 
 ---
 
-## 🚀 Features
+## Features
 
-- ✅ Human & Animal classification using CLIP (ViT-B/32)
-- ✅ Supports 13 categories: `human`, `cow`, `goat`, `lion`, `dog`, `cat`, `horse`, `bird`, `elephant`, `monkey`, `butterfly`, `frog`, `snake`
-- ✅ Works on:
+- Human & Animal classification using CLIP (ViT-B/32)
+- Supports 13 categories: `human`, `cow`, `goat`, `lion`, `dog`, `cat`, `horse`, `bird`, `elephant`, `monkey`, `butterfly`, `frog`, `snake`
+- Works on:
   - Static images
   - Videos (frame-by-frame)
   - Batch dataset directory
-- ✅ Test accuracy on labeled dataset
+- Test accuracy on labeled dataset
 
 ---
+
+
+
+## Approach
+
+    Image & Video Input:
+        Accepts single images, entire datasets, or video files.
+        Simulates bounding box detection (placeholder), but works on the full image for classification.
+
+    CLIP Model Usage:
+        Converts predefined text labels into text embeddings using clip.tokenize().
+        Processes image crops (or full images) using CLIP’s visual encoder.
+        Compares image embeddings to text embeddings using cosine similarity.
+        Picks the most likely label using argmax on the similarity scores.
+
+    Accuracy Evaluation:
+        The test dataset is organized by folders, each representing a class.
+        Each image is classified, and the predicted label is compared with the actual folder name.
+
+
 
 ## 🧾 File Structure
 
